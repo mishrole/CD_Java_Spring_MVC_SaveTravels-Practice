@@ -10,6 +10,7 @@
 	<title>Save Travels</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	
@@ -42,7 +43,15 @@
 						      <td>
 						      	<fmt:formatNumber value = "${expense.amount}" type = "currency" currencySymbol="$"/>
 						      </td>
-						      <td><a href="/expenses/${expense.id}/edit">Edit</a></td>
+						      <td>
+						      <div class="d-flex justify-content-between align-items-center">
+						      	<a href="/expenses/${expense.id}/edit">Edit</a>
+						      	<form action="/expenses/${expense.id}" method="post">
+						      		<input type="hidden" name="_method" value="DELETE">
+						      		<button type="submit" class="btn btn-default link">Delete</button>
+						      	</form>
+						      </div>
+						      </td>
 						    </tr>
 						</c:forEach>
 					  </tbody>

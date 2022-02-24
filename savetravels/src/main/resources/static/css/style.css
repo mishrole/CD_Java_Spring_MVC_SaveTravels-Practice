@@ -1,1 +1,5 @@
-/* Actualmente todos los estilos son usados desde Bootstrap */
+.link {
+	color: #0d6efd;
+	padding: 0;
+    text-decoration: underline;
+}
