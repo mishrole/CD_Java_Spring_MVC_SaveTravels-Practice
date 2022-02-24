@@ -30,6 +30,13 @@ public class ExpenseController {
 		return "index";
 	}
 	
+	@RequestMapping("/{id}/edit")
+	public String edit(@PathVariable("id") Long id, Model model) {
+		Expense result = expenseService.findExpense(id);
+		model.addAttribute("expense", result);
+		return "edit";
+	}
+	
 	@RequestMapping("/{id}")
 	public String show(@PathVariable("id") Long id, Model model) {
 		Expense result = expenseService.findExpense(id);
@@ -44,6 +51,16 @@ public class ExpenseController {
 		}
 		
 		expenseService.createExpense(expense);
+		return "redirect:/expenses";
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("expense") Expense expense, BindingResult result) {
+		if (result.hasErrors()) {
+			return "edit";
+		}
+		
+		expenseService.updateExpense(id, expense);
 		return "redirect:/expenses";
 	}
 	

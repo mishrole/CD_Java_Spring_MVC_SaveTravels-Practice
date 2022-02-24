@@ -31,6 +31,7 @@
 					      <th scope="col">Expense</th>
 					      <th scope="col">Vendor</th>
 					      <th scope="col">Amount</th>
+					      <th scope="col">Action</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -41,6 +42,7 @@
 						      <td>
 						      	<fmt:formatNumber value = "${expense.amount}" type = "currency" currencySymbol="$"/>
 						      </td>
+						      <td><a href="/expenses/${expense.id}/edit">Edit</a></td>
 						    </tr>
 						</c:forEach>
 					  </tbody>
