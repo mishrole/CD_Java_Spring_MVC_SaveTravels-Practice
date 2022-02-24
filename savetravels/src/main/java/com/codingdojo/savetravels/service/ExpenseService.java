@@ -49,7 +49,7 @@ public class ExpenseService implements IExpenseService {
 			data.setVendor(expense.getVendor());
 			data.setAmount(expense.getAmount());
 			
-			return expenseRepository.save(expense);
+			return expenseRepository.save(data);
 		}
 		
 		return null;
