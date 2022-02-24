@@ -15,6 +15,7 @@
 	<div class="container py-5">
 		<div class="pt-2 pb-4"><a href="/expenses">Go back</a></div>
 		
+		<h3 class="text-center">Expense Details</h3>
 		<div class="d-flex justify-content-center">
 			<div class="container">
 				<div class="card">
