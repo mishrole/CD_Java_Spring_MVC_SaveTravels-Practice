@@ -13,6 +13,8 @@
 <body>
 	
 	<div class="container py-5">
+		<div class="pt-2 pb-4"><a href="/expenses">Go back</a></div>
+		
 		<div class="d-flex justify-content-center">
 			<div class="container">
 				<div class="card">
@@ -25,11 +27,11 @@
 						<p><span class="fw-bold">Amount:</span> <fmt:formatNumber value = "${expense.amount}" type = "currency" currencySymbol="$"/></p>
 						
 					</div>
-					<div class="card-footer">
+					<!--<div class="card-footer">
 						<div class="d-flex justify-content-center align-items-center">
 						<a href="/expenses">Go back</a>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
